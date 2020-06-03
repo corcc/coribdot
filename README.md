@@ -9,3 +9,5 @@
 ## to Run
 > java -jar ${jar_file} ${telegram_bot_token}
 
+## Get Release
+> https://github.com/TaYaKi71751/C0V1D-19-B0t/releases
