@@ -3,6 +3,7 @@ package covid.tools;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.Date;
 public class Testing {
     private Document doc;
     private String date;
-    private List<String> info = new ArrayList<String>();
+    private ArrayList<String> info = new ArrayList<String>();
     private ArrayList<String> keys = new ArrayList<>();
     private HashMap<String,String>   covidTestingMapInfo = new HashMap<String,String>();
     public HashMap<String,String> getCovidTesting(){
@@ -32,16 +33,9 @@ public class Testing {
                 .replace(")</span>", "")
                 .split(" ")[i];
 
-        this.info = Arrays.asList((doc.getElementsByClass("minisize").select("tbody tr").get(0).parentNode().toString())
-            .replace("<tbody>", "")
-            .replace("<tr>", "")
-            .replace("<td>","")
-            .replace("</tr>", "")
-            .replace("</tbody>", "")
-            .replace("\n", "")
-            .replace(",", "")
-            .replace(" ", "")
-            .split("</td>"));
+        Collections.addAll(this.info ,(doc.getElementsByClass("minisize").select("tbody tr").get(0).parentNode().toString())
+                        .replace("<tbody>", "").replace("<tr>", "").replace("<td>", "").replace("</tr>", "")
+                        .replace("</tbody>", "").replace("\n", "").replace(" ", "").split("</td>"));
         this.keys.clear();
             for (int j = 5; j > 0 && j < doc.getElementsByClass("minisize").get(0).childNodes().size(); j -= 2)
                 for (int i = 1; i < doc.getElementsByClass("minisize").get(0).childNodes().get(5).childNodes().get(j)
@@ -53,7 +47,15 @@ public class Testing {
                     this.keys.add(doc.getElementsByClass("minisize").get(0).childNodes().get(5).childNodes().get(j)
                         .childNodes().get(i).childNodes().get(0).toString());
         for (int i = 0; i < this.info.size(); i++)
-            covidTestingMapInfo.put(this.keys.get(i), this.info.get(i));
+            try{
+                if(this.keys.get(i).contains("Subtotal"))
+                    throw new Exception();
+            }catch(Exception e){
+                this.keys.remove(i);
+                this.info.remove(i);
+            }finally{
+                covidTestingMapInfo.put(this.keys.get(i), this.info.get(i));
+            }
         covidTestingMapInfo.put("Date",date);
         return covidTestingMapInfo;
     }
