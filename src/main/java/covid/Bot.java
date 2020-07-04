@@ -65,7 +65,7 @@ class Bot extends TelegramLongPollingBot {
             msg += confirmed.getConfirmedMapKeyInfo(i) + " : "
                     + confirmedMap.get(confirmed.getConfirmedMapKeyInfo(i)) + "\n";
         }
-        msg += "Date : " + confirmedMap.get("Date") + " (KST)\n"
+        msg += "Date : " + confirmedMap.get("Date") + " \n"
                 + "from : http://ncov.mohw.go.kr/en/bdBoardList.do";
         SendMessage sendMessage = new SendMessage().setChatId(chatId).setText(msg);
         try {
@@ -83,7 +83,7 @@ class Bot extends TelegramLongPollingBot {
             msg += testing.getTestingMapKeyInfo(i) + " : "
                     + testingMap.get(testing.getTestingMapKeyInfo(i)) + "\n";
         }
-        msg += "Date : " + testingMap.get("Date") + " (KST)\n"
+        msg += "Date : " + testingMap.get("Date") + " \n"
                 + "from : http://ncov.mohw.go.kr/en/bdBoardList.do";
         SendMessage sendMessage = new SendMessage().setChatId(chatId).setText(msg);
         try {
