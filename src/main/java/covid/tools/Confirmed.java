@@ -5,15 +5,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import org.jsoup.select.Elements;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class Confirmed {
     private Document doc;
     private String date;
-    Elements aaaa = new Elements();
     private ArrayList<String> info = new ArrayList<String>();
     private ArrayList<String> keys = new ArrayList<String>();
     private HashMap<String, String> covidConfirmedMapInfo = new HashMap<String, String>();
@@ -32,8 +29,6 @@ public class Confirmed {
         this.keys.clear();
         this.info.clear();
 
-        aaaa = doc.getElementsByClass("ca_value");
-        //Total
         for(int i = 0; i < doc.getElementsByClass("ca_top").size();i++)
             this.keys.add(doc.getElementsByClass("ca_top").get(i).childNodes().get(0).toString().replace("\n", ""));
         
@@ -42,6 +37,7 @@ public class Confirmed {
         for(int i = 0 ; i< doc.getElementsByClass("txt_ntc").size();i++)
             this.info.add(doc.getElementsByClass("ca_value").get((i+1)*2).childNodes().get(0).toString().replace("\n", "")
             +"("+doc.getElementsByClass("txt_ntc").get(i).childNodes().get(0).toString().replace("\n", "")+")");
+            
         for (int i = 0; i < info.size(); i++)
             covidConfirmedMapInfo.put(keys.get(i), info.get(i));
         covidConfirmedMapInfo.put("Date", date);
