@@ -33,7 +33,14 @@ public class Confirmed {
             this.keys.add(doc.getElementsByClass("ca_top").get(i).childNodes().get(0).toString().replace("\n", ""));
         
         this.info.add(doc.getElementsByClass("ca_value").get(0).childNodes().get(0).toString().replace("\n", "")
-        +"("+doc.getElementsByClass("inner_value").get(0).childNodes().get(0).toString().replace("\n", "")+")");
+        +"("
+            +doc.getElementsByClass("inner_value").get(0).childNodes().get(0).toString().replace("\n", "")
+            +"("
+                +doc.getElementsByClass("inner_value").get(1).childNodes().get(0).toString().replace("\n", "")
+                +","
+                +doc.getElementsByClass("inner_value").get(2).childNodes().get(0).toString().replace("\n", "")
+            +")"
+        +")");
         for(int i = 0 ; i< doc.getElementsByClass("txt_ntc").size();i++)
             this.info.add(doc.getElementsByClass("ca_value").get((i+1)*2).childNodes().get(0).toString().replace("\n", "")
             +"("+doc.getElementsByClass("txt_ntc").get(i).childNodes().get(0).toString().replace("\n", "")+")");
