@@ -37,7 +37,7 @@ public class Confirmed {
             +doc.getElementsByClass("inner_value").get(0).childNodes().get(0).toString().replace("\n", "")
             +"("
                 +doc.getElementsByClass("inner_value").get(1).childNodes().get(0).toString().replace("\n", "")
-                +","
+                +"/"
                 +doc.getElementsByClass("inner_value").get(2).childNodes().get(0).toString().replace("\n", "")
             +")"
         +")");
