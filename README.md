@@ -5,12 +5,16 @@
 
 
 > ## Dependencies
-> ```
+> <pre>
+> <code>
 > pacman -S jdk-openjdk
-> ```
+> </code>
+> </pre>
 
 
 > ## Run
-> ```
+> <pre>
+> <code>
 > java -jar ${jar_file} ${telegram_bot_token}
-> ```
+> </code>
+> </pre>
