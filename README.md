@@ -7,5 +7,5 @@
 > Java
 
 
-## to Run
+## Run
 > java -jar ${jar_file} ${telegram_bot_token}
