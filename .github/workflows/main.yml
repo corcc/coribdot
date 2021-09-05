@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Maven Package and Upload
+name: Maven Package and Upload 
 
 # Controls when the workflow will run
 on:
@@ -19,6 +19,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: "Build & Upload Artifacts"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     permissions:
@@ -46,4 +47,33 @@ jobs:
           with:
             name: package (JAR Files)
             path: |
+              target/*.jar
+  pre-release:
+    name: "Build & Pre Release"
+    runs-on: "ubuntu-latest"
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        - name: package
+          run: |
+            sudo apt-get update
+            sudo ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime 
+            sudo apt-get install tzdata -y
+            sudo dpkg-reconfigure --frontend noninteractive tzdata
+            sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+            sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+            sudo apt-get update && sudo apt-get install docker-ce
+            sudo usermod -aG docker $USER
+            docker build --force-rm --tag dockerfile:build .
+            docker run -i -v $(pwd):/data dockerfile:build
+            ls -la $(pwd)/target
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          with:
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            automatic_release_tag: "latest"
+            prerelease: true
+            title: "Test Build"
+            files: |
               target/*.jar
