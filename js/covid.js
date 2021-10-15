@@ -16,6 +16,7 @@ window.onload =
 			});
 		}).then(()=>{
 			$(".covid.items").append('<a class="covid source" href="https://github.com/pomber/covid19" title=" pomber/covid19 (GitHub) ">Data-Src</a>');
+			$(".covid.items").append('<a class="covid release" href="https://github.com/TaYaKi71751/C0V1D-19-B0t/releases/tag/latest" title=" Release ">Release</a>')
 		});
 		
 	}

@@ -7,7 +7,7 @@
     font-size: 2.25em;
 }
 
-.value,.source {
+.value,.source,.release {
     justify-content: center;
     width: 10pc;
     padding: 0.0125pc;
@@ -20,7 +20,8 @@
     font-size: 1.7pc;
 }
 
-.source {
+.source,.release {
+    margin: 0 1pc 1.125pc 1pc;
     width: 10pc;
     font-size: 1pc;
 }
