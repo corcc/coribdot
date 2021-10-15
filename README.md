@@ -3,7 +3,9 @@
 > [![](https://github.com/TaYaKi71751/C0V1D-19-B0t/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/TaYaKi71751/C0V1D-19-B0t/actions/workflows/codeql-analysis.yml)
 > [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 > <br>
-> Telegram Bot get COVID-19 (SOUTH_KOR) Info from mohw.go.kr 
+> Telegram Bot get
+>  (COVID-19 (SOUTH_KOR) || COVID-19 Vaccinate (SOUTH_KOR)) Info
+>  from mohw.go.kr 
 
 
 > ## Dependencies
