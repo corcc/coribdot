@@ -1,4 +1,4 @@
-.covid {
+.covid,.vaccinate {
     display: flex;
     flex-wrap: wrap;
 }
@@ -22,8 +22,11 @@
 
 .source,.release {
     margin: 0 1pc 1.125pc 1pc;
-    width: 10pc;
     font-size: 1pc;
+}
+
+.source,.release,.item {
+    background: #DBDBDB40;
 }
 
 .item {
@@ -37,12 +40,12 @@
     text-align: center;
     color: black;
     font-size: 2em;
-    background: #DBDBDB24;
 }
 .items {
+    margin: 1.42pc;
     height: 30pc;
     width: 25pc;
-    background: #af202077;
+    /* background: green; */
     display: flex;
     border-radius: 3pc;
     display: flex;

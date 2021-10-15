@@ -6,6 +6,8 @@ body {
     justify-content: center;
 }
 .center-height {
+    display: flex;
+    flex-direction: row;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
