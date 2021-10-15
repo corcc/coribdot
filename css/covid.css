@@ -1,0 +1,49 @@
+.covid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.💀,.🦠,.😊,.📅 {
+    font-size: 2.25em;
+}
+
+.value,.source {
+    justify-content: center;
+    width: 10pc;
+    padding: 0.0125pc;
+    display: flex;
+    align-items: center;
+}
+
+.value {
+    max-height: 150px;
+    font-size: 1.7pc;
+}
+
+.source {
+    width: 10pc;
+    font-size: 1pc;
+}
+
+.item {
+    flex-direction: column;
+    display: flex;
+    margin: 1.125pc;
+    margin-bottom: 0;
+    height: 10pc;
+    width: 10pc;
+    border-radius: 3pc;
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    background: #DBDBDB24;
+}
+.items {
+    height: 30pc;
+    width: 25pc;
+    background: #af202077;
+    display: flex;
+    border-radius: 3pc;
+    display: flex;
+    flex-wrap: wrap;
+}

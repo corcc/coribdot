@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+.center-width {
+    display: flex;
+    justify-content: center;
+}
+.center-height {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
