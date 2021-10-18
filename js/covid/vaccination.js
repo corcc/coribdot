@@ -1,10 +1,10 @@
 function covid_vaccinate() {
     return (async function () {
         const data_src = {
-            "url": "https://www.data.go.kr/data/15078166/openapi.do",
-            "name": "",
-            "openapi": {
-                "url": "https://nip.kdca.go.kr/irgd/cov19stats.do?list=all",
+            "url": "https://github.com/TaYaKi71751/corcc",
+            "name": "corcc",
+            "data": {
+                "url": "https://tayaki71751.github.io/corcc/data/simple/latest.json",
             }
         }, emoji = {
             "dataTime": "📅",
@@ -13,7 +13,7 @@ function covid_vaccinate() {
             "thirdcnt": "🤟",
         };
         // Use cors-anywhere for get proxied response
-        await $.get('https://tayaki71751.github.io/corcc/data/simple/latest.json', function (data) {
+        await $.get(data_src.data.url, function (data) {
             Object.entries(data['today']).forEach(([k, v]) => {
                 $('.vaccination.items').append(
                     `<div class="center-width item">
