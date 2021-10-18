@@ -1,4 +1,3 @@
-window.onload = async function(){
-    await covid19();
-    await vaccinate();
+window.onload = function(){
+    __();
 }
