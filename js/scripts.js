@@ -27,6 +27,12 @@ function importJscripts(paths) {
 }
 
 const paths = {
+  "./js/covid/case.js": {
+    "src": "./js/covid/case.js",
+  },
+  "./js/covid/vaccination.js": {
+    "src": "./js/covid/vaccination.js",
+  },
   "jQuery": {
     "name": "jQuery 3.6.0",
     "desc": "jQuery 3.6.0 from Microsoft CDN",
@@ -36,12 +42,6 @@ const paths = {
     "name": "TwEmoji",
     "desc": "TwEmoji by Twitter for Emoji Fonts",
     "src": "https://twemoji.maxcdn.com/v/latest/twemoji.min.js",
-  },
-  "./js/covid/case.js": {
-    "src": "./js/covid/case.js",
-  },
-  "./js/covid/vaccination.js": {
-    "src": "./js/covid/vaccination.js",
   },
 };
 importJscripts(paths);

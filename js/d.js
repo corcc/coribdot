@@ -43,8 +43,8 @@ var __ = async function () {
     })();
 
     await (async function () {
-      window.covid_vaccinate = undefined;
-      window.covid_case = undefined;
+      // window.covid_vaccinate = undefined;
+      // window.covid_case = undefined;
     })();
   })
 }
