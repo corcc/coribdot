@@ -1,14 +1,27 @@
 body {
-    text-align: center;
+    /* height: 120vh;
+    width: 150vw; */
+    flex-wrap:wrap;
+    /* text-align: center; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
+
 .center-width {
     display: flex;
     justify-content: center;
 }
 .center-height {
     display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    width: 99vw;
+    flex-wrap: wrap;
 }

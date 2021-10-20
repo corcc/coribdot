@@ -8,10 +8,11 @@
     justify-content: center;
     height: fit-content;
     width: inherit;
-    font-size: 1.5em;
-    border-bottom: solid #24242424 0.1pc;
+    font-size: 1.75em;
+    border-bottom: solid #24242424 0.01em;
     background: #DBDBDB08;
     padding: inherit;
+    /* border-radius: 9999px; */
 }
 
 .💀,.🦠,.😊,.📅,.☝️,.✌️,.🤟,.💉 {
@@ -21,11 +22,10 @@
 .value {
     justify-content: center;
     width: 10pc;
-    padding: 0.0125pc;
+    padding: 0.125em;
     display: flex;
     align-items: center;
-    max-height: 150px;
-    font-size: 1.7pc;
+    font-size: 0.7em;
 }
 
 .item {
@@ -35,22 +35,21 @@
 .item {
     flex-direction: column;
     display: flex;
-    margin: 1.125pc;
-    margin-bottom: 0;
-    height: 10pc;
-    width: 10pc;
-    border-radius: 3pc;
+    margin: 0.5em;
+    height: 5em;
+    width: 5em;
+    border-radius: 1.5em;
     text-align: center;
     color: black;
     font-size: 2em;
 }
 .items {
     margin: 1.42pc;
-    height: 30pc;
-    width: 25pc;
-    /* background: green; */
+    height: 30em;
+    width: 25em;
+    justify-content: center;
     display: flex;
-    border-radius: 3pc;
-    display: flex;
+    border-radius: 4em;
     flex-wrap: wrap;
+    overflow-inline: -moz-hidden-unscrollable;
 }
