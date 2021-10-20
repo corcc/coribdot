@@ -1,4 +1,4 @@
-function covid_case () {
+function covid_case() {
     return (async function () {
         const data_src = {
             "url": "https://pomber.github.io/covid19/timeseries.json",
@@ -8,19 +8,24 @@ function covid_case () {
                 "platform": "GitHub",
             },
         }, emoji = {
+            "symbol": "🦠",
             "confirmed": "🦠",
             "deaths": "💀",
             "recovered": "😊",
             "date": "📅",
         };
+        $(`.${emoji['symbol'] + emoji['symbol']}.items`).append(`<a 
+            class="${emoji['symbol'] + emoji['symbol']} source"
+            href='${data_src.repository.url}' 
+            title='${data_src.repository.name} (${data_src.repository.platform}) '>
+                <div class='${emoji['symbol']} sym'>${emoji['symbol']}</div></a>`);
         await $.get(data_src.url, function (data) {
             Object.entries(data["Korea, South"][data["Korea, South"].length - 1]).forEach(([k, v]) => {
-                var _html = `<div class="center-width item">
+                $(`.${emoji['symbol'] + emoji['symbol']}.items`).append(
+                    `<div class="center-width item">
                     <div class='${emoji[k]}'>${emoji[k]}</div>
-                    <div class="value">${v}</div>`;
-                $(".covid.items").append(_html);
+                        <div class="value">${v}</div>`);
             });
         });
-        $(".covid.items").append('<a class="covid source" href="' + data_src.repository.url + '" title=" ' + data_src.repository.name + ' (' + data_src.repository.platform + ') ' + ' ">Data-Src</a>');
     });
 }

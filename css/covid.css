@@ -1,31 +1,34 @@
-.covid,.vaccination {
+.🦠🦠,.💉💉 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.💀,.🦠,.😊,.📅,.☝️,.✌️,.🤟 {
+.source,.sym {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: inherit;
+    font-size: 1.5em;
+    border-bottom: solid #24242424 0.1pc;
+    background: #DBDBDB08;
+    padding: inherit;
+}
+
+.💀,.🦠,.😊,.📅,.☝️,.✌️,.🤟,.💉 {
     font-size: 2.25em;
 }
 
-.value,.source,.release {
+.value {
     justify-content: center;
     width: 10pc;
     padding: 0.0125pc;
     display: flex;
     align-items: center;
-}
-
-.value {
     max-height: 150px;
     font-size: 1.7pc;
 }
 
-.source,.release {
-    margin: 0 1pc 1.125pc 1pc;
-    font-size: 1pc;
-}
-
-.source,.release,.item {
+.item {
     background: #DBDBDB40;
 }
 

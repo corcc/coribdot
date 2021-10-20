@@ -13,16 +13,16 @@ var _fn = {
     },
     "pre": function () {
         const css = {
-            "covid" : {
+            "🦠🦠": {
                 "background": "linear-gradient(to left bottom,#f8a,#a8f)",
             },
-            "vaccination": {
-                "background": "linear-gradient(to left bottom,#8af,#8fa)", 
+            "💉💉": {
+                "background": "linear-gradient(to left bottom,#8af,#8fa)",
             },
         }
-        Object.entries(css).forEach(([_class,styles]) => {
-            Object.entries(styles).forEach(([k,v]) => {
-                $("." + _class + ".items").css(k,v);
+        Object.entries(css).forEach(([_class, styles]) => {
+            Object.entries(styles).forEach(([k, v]) => {
+                $("." + _class + ".items").css(k, v);
             });
         });
     },
@@ -34,8 +34,17 @@ var _fn = {
         delete this;
     },
 }
-const __ = function () {
-    _fn._d(_fn);
-    _fn.remove();
-    delete _fn;
+var __ = async function () {
+    return (async function () {
+        await (async function () {
+            await _fn._d(_fn);
+            await _fn.remove();
+            delete _fn;
+        })();
+
+        await (async function () {
+            window.covid_vaccinate = undefined;
+            window.covid_case = undefined;
+        })();
+    })
 }

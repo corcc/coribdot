@@ -2,12 +2,12 @@ body {
     background: #ffdededb;
 }
 a {
-    border-radius: 9999px;
+    /* border-radius: 9999px;
     margin-bottom: 1.25pc;
     background: #DBDBDB20;
-    border: #ee82ee77 solid 0.1pc;
+    border: #ee82ee77 solid 0.1pc; */
     text-decoration: none;
-    font-weight: bolder;
+    /* font-weight: bolder;
     color: #242424C0;
-    padding: 0.75pc;
+    padding: 0.75pc; */
 }
