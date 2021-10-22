@@ -3,6 +3,11 @@
     flex-wrap: wrap;
 }
 
+.covid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .source,.sym {
     display: flex;
     justify-content: center;

@@ -11,27 +11,8 @@ window['global']['_function']['_fn'] = {
       }
     });
   },
-  "init": function () {
-    
-  }
-  ,
-  "pre": function () {
-    const css = {
-      "🦠🦠": {
-        "background": "linear-gradient(to left bottom,#f8aa,#a8fa)",
-      },
-      "💉💉": {
-        "background": "linear-gradient(to left bottom,#8afa,#8faa)",
-      },
-    }
-    Object.entries(css).forEach(([_class, styles]) => {
-      Object.entries(styles).forEach(([k, v]) => {
-        $("." + _class + ".items").css(k, v);
-      });
-    });
-  },
-  "・・・": window['global']['_function']['_covid']['vaccination'](),
   "－・－・": window['global']['_function']['_covid']['case'](),
+  "・・・": window['global']['_function']['_covid']['vaccination'](),
   "remove": function () {
     Object.entries(this).forEach(([k, v]) => {
       delete this[k];
