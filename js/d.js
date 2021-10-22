@@ -1,4 +1,4 @@
-var _fn = {
+window['global']['_function']['_fn'] = {
   "_d": function (a) {
     Object.entries(a).forEach(([k, v]) => {
       try {
@@ -11,6 +11,10 @@ var _fn = {
       }
     });
   },
+  "init": function () {
+    
+  }
+  ,
   "pre": function () {
     const css = {
       "🦠🦠": {
@@ -26,7 +30,8 @@ var _fn = {
       });
     });
   },
-  "－・－・": covid(),
+  "・・・": window['global']['_function']['_covid']['vaccination'](),
+  "－・－・": window['global']['_function']['_covid']['case'](),
   "remove": function () {
     Object.entries(this).forEach(([k, v]) => {
       delete this[k];
@@ -34,17 +39,24 @@ var _fn = {
     delete this;
   },
 }
-var __ = async function () {
+window['global']['_function']['__'] = async function () {
   return (async function () {
     await (async function () {
-      await _fn._d(_fn);
-      await _fn.remove();
-      delete _fn;
+      await globalThis['global']['_function']._fn._d(globalThis['global']['_function']._fn);
+      await globalThis['global']['_function']._fn.remove();
+      delete globalThis['global']['_function']._fn;
     })();
 
     await (async function () {
-      // window.covid_vaccinate = undefined;
-      // window.covid_case = undefined;
+      Object.keys(window['global']).forEach((_varNm) => {
+        if (window['global']['_window'].includes(_varNm)) { return; }
+        if ((typeof window['global'][_varNm]).includes('bject')) {
+          Object.keys(window['global'][_varNm])
+        }
+        if(typeof window['global'][_varNm]){
+          delete window['global'][_varNm];
+        }
+      })
     })();
   })
 }

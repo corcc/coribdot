@@ -1,9 +1,11 @@
-window.onload = async function () {
+window.onload = (function () {
   (async function () {
-    const _ = await __();
+    const _ = await window['global']['_function']['__']();
     await _();
-  })();
-  (function () {
-    window['__'] = undefined;
-  })();
-}
+  })().then(()=>{
+    Object.keys(window).forEach((k)=>{
+      if(window.global._window.includes(k)) { return; }
+      delete window[k];
+    })
+  });
+});

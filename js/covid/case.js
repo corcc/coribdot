@@ -1,8 +1,7 @@
-
-function covid_case() {
+window['global']['_function']['_covid']['case'] = function () {
   return (async function () {
     const data = {
-      "url": "https://corcc.github.io/corcc/data/case/simple/latest.json",
+      "url": "/corcc/case/simple/latest.json",
       "repository": {
         "name": "corcc/corcc",
         "url": "https://github.com/corcc/corcc",
@@ -35,7 +34,7 @@ function covid_case() {
       return ((__(options.tag) ? `<${options.tag}` : '') + ' ' +
         (__(options.class) ? `${'class="' + options.class + '"'}` : '') + ' ' +
         (__(options.href) ? `href='${options.href}'` : '') + ' ' +
-        (__(options.title) ? (`title='${options.title.replace("'","&#146;")}'`) : '') + ' ' +
+        (__(options.title) ? (`title='${options.title.replace("'", "&#146;")}'`) : '') + ' ' +
         (__(options.tag) ? `>` : '') + ' ' +
         (__(inner) ? `${typeof inner != 'string' ? _inner : inner}` : '') + ' ' +
         (__(options.tag) ? `</${options.tag}>` : '') + ' ');
@@ -43,10 +42,9 @@ function covid_case() {
     const docAppend = (function (selectors, doc) {
       $(`${selectors}`).append(doc);
     });
-
     const symbol = (function symbol() {
-      docAppend(`.${emoji['symbol'] + emoji['symbol']}.items`,
-        _e({
+      // docAppend(`.${emoji['symbol'] + emoji['symbol']}.items`,
+      return _e({
           'tag': 'a',
           'class': `${emoji['symbol'] + emoji['symbol']} source`,
           'href': `${data.repository.url}`,
@@ -54,26 +52,29 @@ function covid_case() {
         }, _e({
           'tag': 'div',
           'class': `${emoji['symbol']} sym`,
-        }, `${emoji['symbol']}`)))
-    })();
+        }, `${emoji['symbol']}`))
+        // )
+    });
     await $.get(data.url, function (res) {
       const data = Object.entries(res);
       console.log(res);
+      var _html = "";
       data.forEach(([k, v]) => {
-        console.log(emoji[k],v);
-        docAppend(`.${emoji['symbol'] + emoji['symbol']}.items`,
-          _e({
-            'tag': 'div',
-            'class': 'center-width item',
-            'title': desc[k],
-          }, _e({
-            'tag': 'div',
-            'class': `${emoji[k]}`,
-          }, emoji[k]), _e({
-            'tag': 'div',
-            'class': 'value',
-          }, `${v}`)));
+        console.log(emoji[k], v);
+        _html += _e({
+          'tag': 'div',
+          'class': 'center-width item',
+          'title': desc[k],
+        }, _e({
+          'tag': 'div',
+          'class': `${emoji[k]}`,
+        }, emoji[k]), _e({
+          'tag': 'div',
+          'class': 'value',
+        }, `${v}`));
       });
+      $(`.${emoji['symbol'] + emoji['symbol']}.items`).html(symbol() + _html);
     });
+
   });
 }

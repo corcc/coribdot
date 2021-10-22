@@ -1,7 +1,8 @@
-function covid_vaccinate() {
+
+window['global']['_function']['_covid']['vaccination'] = function () {
   return (async function () {
     const data = {
-      "url": "https://corcc.github.io/corcc/data/vaccination/simple/latest.json",
+      "url": "/corcc/vaccination/simple/latest.json",
       "repository": {
         "name": "corcc/corcc",
         "url": "https://github.com/corcc/corcc",
@@ -60,20 +61,20 @@ function covid_vaccinate() {
       const data = Object.entries(res['today']);
       console.log(res);
       data.forEach(([k, v]) => {
-        console.log(emoji[k],v);
-        docAppend(`.${emoji['symbol'] + emoji['symbol']}.items`,
-          _e({
-            'tag': 'div',
-            'class': 'center-width item',
-            'title': desc[k],
-          }, _e({
-            'tag': 'div',
-            'class': `${emoji[k]}`,
-          }, emoji[k]), _e({
-            'tag': 'div',
-            'class': 'value',
-          }, `${v}`)));
+        console.log(emoji[k], v);
+        _html += _e({
+          'tag': 'div',
+          'class': 'center-width item',
+          'title': desc[k],
+        }, _e({
+          'tag': 'div',
+          'class': `${emoji[k]}`,
+        }, emoji[k]), _e({
+          'tag': 'div',
+          'class': 'value',
+        }, `${v}`));
       });
+      $(`.${emoji['symbol'] + emoji['symbol']}.items`).html(symbol() + _html);
     });
   });
 }

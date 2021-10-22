@@ -1,7 +1,7 @@
 
-function covid() {
+window['global']['_function']['covid'] = function () {
   return {
-    "・・・": covid_vaccinate(),
-    "－・－・": covid_case(),
+    "・・・": window['global']['_function']['_covid']['vaccination'](),
+    "－・－・": window['global']['_function']['_covid']['case'](),
   };
 }
