@@ -22,6 +22,7 @@ window['global']['_function']['_fn'] = {
 }
 window['global']['_function']['__'] = async function () {
   return (async function () {
+    prop.background = globalThis['cookie']()['background'];
     await (async function () {
       await globalThis['global']['_function']._fn._d(globalThis['global']['_function']._fn);
       await globalThis['global']['_function']._fn.remove();
@@ -29,14 +30,9 @@ window['global']['_function']['__'] = async function () {
     })();
 
     await (async function () {
-      Object.keys(window['global']).forEach((_varNm) => {
-        if (window['global']['_window'].includes(_varNm)) { return; }
-        if ((typeof window['global'][_varNm]).includes('bject')) {
-          Object.keys(window['global'][_varNm])
-        }
-        if(typeof window['global'][_varNm]){
-          delete window['global'][_varNm];
-        }
+      Object.keys(globalThis['global']).forEach((_varNm) => {
+        if (globalThis['global']['_window'].includes(_varNm)) { return; }
+        delete globalThis['global'][_varNm];
       })
     })();
   })
