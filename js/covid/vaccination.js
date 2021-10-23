@@ -14,9 +14,9 @@ window['global']['_function']['_covid']['vaccination'] = function () {
       "firstcnt": "☝️",
       "secondcnt": "✌️",
       "thirdcnt": "🤟",
-      "today":"🆕",
-      "today_c":"🆕🗓️",
-      "yesterday_c":"🗓️"
+      "today":"🇰🇷🆕",
+      "today_c":"🇰🇷🆕🗓️",
+      "yesterday_c":"🇰🇷🗓️"
     }, desc = {
       "thirdcnt": "Booster",
       "secondcnt": "Fully",
@@ -63,7 +63,7 @@ window['global']['_function']['_covid']['vaccination'] = function () {
       }, _e({
         'tag': 'div',
         'class': `${emoji['symbol']} sym`,
-      }, `${emoji[day]} ${emoji['symbol']}`))
+      }, `${emoji[day]}${emoji['symbol']}`))
     });
 
     const unitTime = function (millisec) {
