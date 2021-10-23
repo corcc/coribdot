@@ -64,15 +64,18 @@ window['global']['_function']['_covid']['case'] = function () {
       const data = Object.entries(res);
       console.log(res);
       var _html = "";
-      (function () {
-        if ($(`.covid > .${emoji['symbol'] + emoji['symbol']}.items`).length == 0) {
+      (function(){
+        if($(`.covid > div > .${emoji['symbol'] + emoji['symbol']}.items`).length == 0){
           $(`.covid`).append(_e({
-            'tag': 'div',
-            'class': `${emoji['symbol'] + emoji['symbol']} items`,
-            'style': {
-              "background": `linear-gradient(to left bottom,${randomColor()},${randomColor()})`
-            }
-          }));
+            'tag':'div',
+            'class':'pad-1pc',
+          },_e({
+            'tag':'div',
+            'class':`${emoji['symbol'] + emoji['symbol']} items`,
+            'style':{
+              'background':`${randomGradient('to left bottom')}`,
+            },
+          })));
         }
       })();
       data.forEach(([k, v]) => {
@@ -89,7 +92,7 @@ window['global']['_function']['_covid']['case'] = function () {
           'class': 'value',
         }, `${v}`));
       });
-      $(`.covid > .${emoji['symbol'] + emoji['symbol']}.items`).html(symbol() + _html);
+      $(`.covid > div > .${emoji['symbol'] + emoji['symbol']}.items`).html(symbol() + _html);
     });
 
   });

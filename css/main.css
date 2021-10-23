@@ -1,6 +1,9 @@
 body {
     /* background: #ffdededb; */
     background: #242424;
+    overflow-x: hidden;
+    min-height: max-content;
+    overscroll-behavior:inherit;
 }
 a {
     /* border-radius: 9999px;
@@ -11,4 +14,13 @@ a {
     /* font-weight: bolder;
     color: #242424C0;
     padding: 0.75pc; */
+}
+html,body,div {
+    height: 100%;
+}
+body,div {
+    /* height: 100%; */
+    margin: 0;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed; */
 }

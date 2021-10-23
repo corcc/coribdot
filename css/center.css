@@ -21,7 +21,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
-    width: 99vw;
+    height: 100%;
+    width: 100%;
     flex-wrap: wrap;
+}
+
+.pad-1pc {
+    height: fit-content;
+    padding: 2em;
 }

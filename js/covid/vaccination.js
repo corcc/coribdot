@@ -95,14 +95,17 @@ window['global']['_function']['_covid']['vaccination'] = function () {
         const ago = dataTimeAgo(data);
         const mainElem = `.${emoji['symbol'] + emoji['symbol']}.items`;
         (function(){
-          if($(`.covid > .${emoji['symbol'] + emoji['symbol']}.items.${day}`).length == 0){
+          if($(`.covid > div > .${emoji['symbol'] + emoji['symbol']}.items.${day}`).length == 0){
             $(`.covid`).append(_e({
+              'tag':'div',
+              'class':'pad-1pc',
+            },_e({
               'tag':'div',
               'class':`${emoji['symbol'] + emoji['symbol']} items ${day}`,
               'style':{
-                'background':`linear-gradient(to left bottom,${randomColor()},${randomColor()})`,
+                'background':`${randomGradient('to left bottom')}`,
               },
-            }));
+            })));
           }
         })();
         var _html = "";

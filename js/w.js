@@ -30,19 +30,26 @@ const randomNum = (function (MAX_NUM) {
 const randomColor = (function () {
   return `rgba(${randomNum(255)},${randomNum(255)},${randomNum(255)},160)`;
 });
+const randomGradient = (function (deg) {
+  return `linear-gradient(${deg},${randomColor()},${randomColor()}) no-repeat fixed`
+})
 let prop = {
   "background": '#242424',
 };
 Object.defineProperty(prop, "background", {
   get: function () {
     return {
-      "cfg":background,
-      "now":document.body.style.background,
+      "cfg": background,
+      "now": document.body.style.background,
     };
   },
   set: function (value) {
-    document.body.style.background = (value == 'random') ? randomColor() : value;
+    document.body.style.background = (value == 'random') ? (randomNum(2) ? randomColor() : randomGradient('to right bottom')) : value;
     background = value;
     document.cookie = `background=${value};`;
+    console.log({
+      "cfg": background,
+      "now": document.body.style.background,
+    });
   },
 });
