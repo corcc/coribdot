@@ -63,7 +63,7 @@ window['global']['_function']['_covid']['case'] = function () {
       }, _e({
         'tag': 'div',
         'class': `${emoji['symbol']} sym`,
-      }, `${emoji['symbol']}`))
+      }, `🆕🗓️${emoji['symbol']}`))
     });
 
     await $.get(data.url, function (res) {
