@@ -24,23 +24,24 @@ window['cookie'] = (function () {
   });
   return cks;
 });
+const randomNum = (function (MAX_NUM) {
+  return ((Math.random() + "").split(".")[1]) % MAX_NUM;
+});
+const randomColor = (function () {
+  return `rgba(${randomNum(255)},${randomNum(255)},${randomNum(255)},160)`;
+});
 let prop = {
   "background": '#242424',
 };
 Object.defineProperty(prop, "background", {
   get: function () {
-    return `${background}`;
+    return {
+      "cfg":background,
+      "now":document.body.style.background,
+    };
   },
   set: function (value) {
-    document.body.style.background = (value == 'random') ? (function () {
-      return `rgba(${(function(MAX_NUM){
-        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
-      })(255)},${(function(MAX_NUM){
-        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
-      })(255)},${(function(MAX_NUM){
-        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
-      })(255)},160)`;
-    })() : value;
+    document.body.style.background = (value == 'random') ? randomColor() : value;
     background = value;
     document.cookie = `background=${value};`;
   },

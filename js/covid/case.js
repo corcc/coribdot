@@ -22,12 +22,6 @@ window['global']['_function']['_covid']['case'] = function () {
     const __ = (function (v) {
       return !(typeof v == 'undefined' || v == '');
     });
-    const randomNum = (function(MAX_NUM){
-      return ((Math.random()+"").split(".")[1]) % MAX_NUM;
-    });
-    const randomColor = (function () {
-      return `rgba(${randomNum(255)},${randomNum(255)},${randomNum(255)},160)`;
-    });
     const _e = (function (options, ...inner) {
       var _inner = '', _style = '';
       if (__(inner) && typeof inner != 'string') {
