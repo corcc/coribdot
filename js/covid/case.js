@@ -24,7 +24,7 @@ window['global']['_function']['_covid']['case'] = function () {
     });
     const randomNum = (function(MAX_NUM){
       return ((Math.random()+"").split(".")[1]) % MAX_NUM;
-    })
+    });
     const randomColor = (function () {
       return `rgba(${randomNum(255)},${randomNum(255)},${randomNum(255)},160)`;
     });

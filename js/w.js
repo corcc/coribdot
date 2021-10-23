@@ -7,11 +7,11 @@ window['global']['_window'] = Object.keys(window);
 window['cookie'] = (function () {
   (function () {
     const _default = {
-      'background':'#242424',
+      'background': '#242424',
     };
     if (document.cookie == '') {
-      Object.entries(_default).forEach(([k,v])=>{
-        document.cookie=`${k}=${v};`;
+      Object.entries(_default).forEach(([k, v]) => {
+        document.cookie = `${k}=${v};`;
       });
     }
   })();
@@ -25,14 +25,22 @@ window['cookie'] = (function () {
   return cks;
 });
 let prop = {
-  "background":'#242424',
+  "background": '#242424',
 };
 Object.defineProperty(prop, "background", {
   get: function () {
     return `${background}`;
   },
   set: function (value) {
-    document.body.style.background = value;
+    document.body.style.background = (value == 'random') ? (function () {
+      return `rgba(${(function(MAX_NUM){
+        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
+      })(255)},${(function(MAX_NUM){
+        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
+      })(255)},${(function(MAX_NUM){
+        return ((Math.random()+"").split(".")[1]) % MAX_NUM;
+      })(255)},160)`;
+    })() : value;
     background = value;
     document.cookie = `background=${value};`;
   },
