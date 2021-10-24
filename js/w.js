@@ -11,7 +11,7 @@ window['cookie'] = (function () {
     };
     if (document.cookie == '') {
       Object.entries(_default).forEach(([k, v]) => {
-        document.cookie = `${k}=${v};`;
+        document.cookie = `${k}=${v};path=/${Object.values(document.location.pathname.split('/',2)).filter((_)=>(_!=''))[0]}`;
       });
     }
   })();
@@ -46,7 +46,7 @@ Object.defineProperty(prop, "background", {
   set: function (value) {
     document.body.style.background = (value == 'random') ? (randomNum(2) ? randomColor() : randomGradient('to right bottom')) : value;
     background = value;
-    document.cookie = `background=${value};`;
+    document.cookie = `background=${value};path=/${Object.values(document.location.pathname.split('/',2)).filter((_)=>(_!=''))[0]}`;
     console.log({
       "cfg": background,
       "now": document.body.style.background,
