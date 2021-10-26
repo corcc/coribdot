@@ -34,6 +34,7 @@ window['global']['_function']['__'] = async function () {
         if (globalThis['global']['_window'].includes(_varNm)) { return; }
         delete globalThis['global'][_varNm];
       })
+      globalThis['global'] = undefined;
     })();
   })
 }
