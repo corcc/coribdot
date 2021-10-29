@@ -50,11 +50,43 @@
 }
 .items {
     margin: 1.42pc;
-    height: 30em;
-    width: 25em;
+    height: 20em;
+    width: 50em;
     justify-content: center;
     display: flex;
     border-radius: 4em;
     flex-wrap: wrap;
-    overflow-inline: -moz-hidden-unscrollable;
+    overflow:hidden;
+    /* overflow-inline: -moz-hidden-unscrollable; */
+}
+@media (max-width : 50em){
+    .items {
+        margin: 1.42pc;
+        height: 30em;
+        width: 25em;
+        justify-content: center;
+        display: flex;
+        border-radius: 4em;
+        flex-wrap: wrap;
+        overflow:hidden;
+        /* overflow-inline: -moz-hidden-unscrollable; */
+    }   
+}
+@media (max-width : 25em){
+    .items {
+        margin: 1.42pc;
+        height: 60em;
+        width: 15em;
+        justify-content: center;
+        display: flex;
+        border-radius: 4em;
+        flex-wrap: wrap;
+        overflow:hidden;
+        /* overflow-inline: -moz-hidden-unscrollable; */
+    }
+
+    .💀,.🦠,.😊,.📅,.☝️,.✌️,.🤟,.💉 {
+        font-size: 1.75em;
+    }
+
 }
